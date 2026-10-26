@@ -95,32 +95,76 @@ letter-spacing:-.208px}
 .foot .logo svg{display:block;width:18px;height:18px}
 .foot p,.foot .fl{display:block;margin:0;padding:8px 20px;text-align:center;border-bottom:1px solid var(--fline)}
 .foot .fl{color:var(--flink)}.foot .fl:last-child{border-bottom:0}
+
+body:has(.ios){background:#f2f2f7}
+main:has(.ios){max-width:none;padding:0 0 112px}
+.ios{max-width:600px;margin:0 auto;color:#000;letter-spacing:normal;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
+.ios a{color:#000;text-decoration:none}.ios a:hover{text-decoration:none}
+.ios h1{margin:0 0 9px;padding:12px 16px 0;font:700 34px/41px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+letter-spacing:.37px}
+.ios .grp{margin:0 16px;background:#fff;border-radius:26px;overflow:hidden}
+.ios .grp+.grp{margin-top:35px}
+.ios .me{position:relative;display:flex;align-items:center;height:88.67px;padding:0 16px}
+.ios .av{flex:none;width:60px;height:60px;border-radius:50%;background:linear-gradient(180deg,#b5b5b5,#3c3c3d);
+color:#fff;font:700 27px/60px -apple-system,BlinkMacSystemFont,"SF Pro Rounded","SF Pro Display",sans-serif;
+text-align:center;letter-spacing:-.3px}
+.ios .tx{display:flex;flex-direction:column;margin-left:18px;padding-top:3px;min-width:0}
+.ios .tx strong{font:600 21px/25px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;letter-spacing:.35px}
+.ios .tx span{margin-top:3.4px;color:#8a8a8e;font:400 13px/18px -apple-system,BlinkMacSystemFont,sans-serif;
+letter-spacing:-.08px}
+.ios .rw{position:relative;display:flex;align-items:center;height:52px;padding-left:13.67px}
+.ios .rw img{flex:none;width:28.67px;height:28.67px;border-radius:7px;margin-right:13.66px;
+box-shadow:0 0 0 .5px rgba(0,0,0,.08)}
+.ios .rw span{font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.43px;
+white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:48px}
+.ios .rw:not(:last-child)::after{content:"";position:absolute;left:56px;right:16.33px;bottom:0;height:1px;
+background:#e7e7e8}
+.ios .rw[hidden]{display:none}
+.ios .chev{position:absolute;right:18.67px;top:50%;width:6.67px;height:11.67px;margin-top:-5.83px;color:#c4c4c7}
+.ios .me:active,.ios .rw:active{background:#e5e5ea}
+.ios .sb{position:fixed;left:50%;bottom:28px;z-index:5;display:flex;align-items:center;gap:11px;
+width:calc(100% - 56px);max-width:544px;height:48.33px;padding:0 23px 0 19.67px;transform:translateX(-50%);
+border-radius:24.17px;background:rgba(255,255,255,.84);
+-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);
+box-shadow:0 8px 28px rgba(0,0,0,.09),0 0 0 .5px rgba(0,0,0,.05),inset 0 1px 0 rgba(255,255,255,.8)}
+.ios .sb svg{flex:none;color:#000}
+.ios .sb input{flex:1;min-width:0;height:44px;margin:0;padding:0;border:0;background:transparent;color:#000;
+font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.43px;outline:0;
+-webkit-appearance:none;appearance:none}
+.ios .sb input::placeholder{color:#707073;opacity:1}
+.ios .sb input::-webkit-search-cancel-button{-webkit-appearance:none}
 </style></head>
 <body>
 <header class="bar"><div class="wrap"><a class="brand" href="./">Lichters Apps</a><nav aria-label="Support"><a href="mailto:support@lichtersapps.com">Support</a></nav></div></header>
 <main class="wrap">
-<section class="hero"><h1>Small apps that do one thing <span class="grad">well</span>.</h1>
-<p class="lead">Focused iPhone apps. No account, no ads, your data stays with you.</p>
-</section>
-<div class="sec"><h2>Apps</h2><a href="mailto:support@lichtersapps.com">Support</a></div>
-<nav class="card list" aria-label="Apps">
-<a class="row" href="bracketmaker/"><img src="bracketmaker/icon.png" alt="" width="60" height="60"><span class="t"><strong>Bracket Maker</strong><span>Tournament Plan</span></span></a>
-<a class="row" href="breedbook/"><img src="breedbook/icon.png" alt="" width="60" height="60"><span class="t"><strong>Breedbook</strong><span>Dog Breeder Log</span></span></a>
-<a class="row" href="clapnote/"><img src="clapnote/icon.png" alt="" width="60" height="60"><span class="t"><strong>Clapnote</strong><span>Rhythm Trainer</span></span></a>
-<a class="row" href="coffer/"><img src="coffer/icon.png" alt="" width="60" height="60"><span class="t"><strong>Coffer</strong><span>Collection Tracker</span></span></a>
-<a class="row" href="floorscribe/"><img src="floorscribe/icon.png" alt="" width="60" height="60"><span class="t"><strong>Floorscribe</strong><span>Floor Plan Maker</span></span></a>
-<a class="row" href="hertzline/"><img src="hertzline/icon.png" alt="" width="60" height="60"><span class="t"><strong>Hertzline</strong><span>Voice Pitch Trainer</span></span></a>
-<a class="row" href="coinclock/"><img src="coinclock/icon.png" alt="" width="60" height="60"><span class="t"><strong>Coinclock</strong><span>Hours Tracker &amp; Pay</span></span></a>
-<a class="row" href="gaugebook/"><img src="gaugebook/icon.png" alt="" width="60" height="60"><span class="t"><strong>Gaugebook</strong><span>Car Maintenance Log</span></span></a>
-<a class="row" href="panelwise/"><img src="panelwise/icon.png" alt="" width="60" height="60"><span class="t"><strong>Panelwise</strong><span>Cut List Optimizer</span></span></a>
-<a class="row" href="regiebericht/"><img src="regiebericht/icon.png" alt="" width="60" height="60"><span class="t"><strong>Regiebericht</strong><span>Site Reports</span></span></a>
-<a class="row" href="schichtblatt/"><img src="schichtblatt/icon.png" alt="" width="60" height="60"><span class="t"><strong>Schichtblatt</strong><span>Shift Calendar</span></span></a>
-<a class="row" href="halfspeed/"><img src="halfspeed/icon.png" alt="" width="60" height="60"><span class="t"><strong>Halfspeed</strong><span>Slow Down Music</span></span></a>
-<a class="row" href="spurbuch/"><img src="spurbuch/icon.png" alt="" width="60" height="60"><span class="t"><strong>Spurbuch</strong><span>Trip Logbook</span></span></a>
-<a class="row" href="stitchnook/"><img src="stitchnook/icon.png" alt="" width="60" height="60"><span class="t"><strong>Stitchnook</strong><span>Row Counter</span></span></a>
-<a class="row" href="tallybin/"><img src="tallybin/icon.png" alt="" width="60" height="60"><span class="t"><strong>Tallybin</strong><span>Stock &amp; Inventory</span></span></a>
-<a class="row" href="ton80/"><img src="ton80/icon.png" alt="" width="60" height="60"><span class="t"><strong>Ton80</strong><span>Darts Scoreboard</span></span></a>
+<div class="ios">
+<h1>Apps</h1>
+<div class="grp"><a class="me" href="mailto:support@lichtersapps.com"><span class="av" aria-hidden="true">DL</span>
+<span class="tx"><strong>David Lichters</strong><span>Support Email</span></span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+<nav class="grp" aria-label="Apps" id="apps">
+<a class="rw" href="bracketmaker/" data-n="bracket maker"><img src="bracketmaker/icon.png" alt="" width="29" height="29"><span>Bracket Maker</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="breedbook/" data-n="breedbook"><img src="breedbook/icon.png" alt="" width="29" height="29"><span>Breedbook</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="clapnote/" data-n="clapnote"><img src="clapnote/icon.png" alt="" width="29" height="29"><span>Clapnote</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="coffer/" data-n="coffer"><img src="coffer/icon.png" alt="" width="29" height="29"><span>Coffer</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="floorscribe/" data-n="floorscribe"><img src="floorscribe/icon.png" alt="" width="29" height="29"><span>Floorscribe</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="hertzline/" data-n="hertzline"><img src="hertzline/icon.png" alt="" width="29" height="29"><span>Hertzline</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="coinclock/" data-n="coinclock"><img src="coinclock/icon.png" alt="" width="29" height="29"><span>Coinclock</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="gaugebook/" data-n="gaugebook"><img src="gaugebook/icon.png" alt="" width="29" height="29"><span>Gaugebook</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="panelwise/" data-n="panelwise"><img src="panelwise/icon.png" alt="" width="29" height="29"><span>Panelwise</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="regiebericht/" data-n="regiebericht"><img src="regiebericht/icon.png" alt="" width="29" height="29"><span>Regiebericht</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="schichtblatt/" data-n="schichtblatt"><img src="schichtblatt/icon.png" alt="" width="29" height="29"><span>Schichtblatt</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="halfspeed/" data-n="halfspeed"><img src="halfspeed/icon.png" alt="" width="29" height="29"><span>Halfspeed</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="spurbuch/" data-n="spurbuch"><img src="spurbuch/icon.png" alt="" width="29" height="29"><span>Spurbuch</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="stitchnook/" data-n="stitchnook"><img src="stitchnook/icon.png" alt="" width="29" height="29"><span>Stitchnook</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="tallybin/" data-n="tallybin"><img src="tallybin/icon.png" alt="" width="29" height="29"><span>Tallybin</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="rw" href="ton80/" data-n="ton80"><img src="ton80/icon.png" alt="" width="29" height="29"><span>Ton80</span><svg class="chev" viewBox="0 0 6.67 11.67" aria-hidden="true"><path d="M1 1l4.67 4.83L1 10.67" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </nav>
+<form class="sb" role="search" onsubmit="return false"><span><svg width="16.33" height="16.67" viewBox="0 0 17 17" aria-hidden="true"><circle cx="7" cy="7" r="5.9" fill="none" stroke="currentColor" stroke-width="2.1"/><path d="M11.4 11.4l4.4 4.4" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></svg></span>
+<input type="search" placeholder="Search" aria-label="Search apps" autocomplete="off" id="q"><span><svg width="13.67" height="18" viewBox="0 0 14 18" aria-hidden="true"><rect x="3.6" y="0.9" width="6.8" height="10.6" rx="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M1.2 8.2a5.8 5.8 0 0 0 11.6 0M7 14v3.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></form>
+<script>document.getElementById("q").addEventListener("input",function(e){var q=e.target.value.trim().toLowerCase();
+document.querySelectorAll("#apps .rw").forEach(function(r){r.hidden=q&&r.dataset.n.indexOf(q)<0})})</script>
+</div>
 </main>
 <footer class="foot"><nav aria-label="Legal"><a class="logo" href="./" aria-label="Lichters Apps"><svg viewBox="0 0 18 18" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M4.5 0h9A4.5 4.5 0 0 1 18 4.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 0 13.5v-9A4.5 4.5 0 0 1 4.5 0zM6 4v10h6.5v-2.2H8.4V4z"/></svg></a><p>Copyright © 2026 Lichters Apps. All rights reserved.</p><a class="fl" href="terms/">Terms of Service</a><a class="fl" href="privacy/">Privacy Policy</a><a class="fl" href="imprint/">Imprint</a></nav></footer>
 </body></html>
