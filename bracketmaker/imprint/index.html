@@ -8,7 +8,7 @@
 :root{color-scheme:light;--bg:#fff;--bar:#f5f5f7;--card:#fff;--text:#1d1d1f;--muted:#6e6e73;--line:#d2d2d7;
 --link:#0071e3;--chev:#aeaeb2;--ring:rgba(0,0,0,.1);--press:#f5f5f7;
 --grad:linear-gradient(96deg,#0071e3 0%,#5e5ce6 52%,#9b3fd6 100%);
---fbg:#f1f1f1;--fcopy:#4c4c4c;--fline:#e5e5e5;--flogo:#9292a1;--flink:#0066cc}
+--fbg:#f1f1f1;--fcopy:#4c4c4c;--fline:#e5e5e5;--flogo:#9292a1;--flink:#0066cc;--fog:255,255,255}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--text);font:17px/1.47 -apple-system,BlinkMacSystemFont,"SF Pro Text",
@@ -19,11 +19,19 @@ a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
 a:focus-visible{outline:2px solid var(--link);outline-offset:2px;border-radius:6px}
 p,li{overflow-wrap:break-word}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
-.bar{background:var(--bar);border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px}
-.bar nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px;color:var(--text)}
-.brand{display:inline-flex;align-items:center;min-height:44px;color:var(--text);font-weight:600;letter-spacing:-.02em}
-main.wrap{padding-top:44px;padding-bottom:64px}
+.nb{position:-webkit-sticky;position:sticky;top:0;z-index:7;height:44px}
+.nb a{position:absolute;left:0;top:0;display:flex;align-items:center;height:44px;padding:0 16px 0 8px;color:#0088ff;
+font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0}
+.nb a:hover{text-decoration:none}.nb a:active{opacity:.3}
+.nb i{flex:none;width:11px;height:19px;margin-right:6px;background:currentColor;-webkit-mask:var(--back) center/11px 19px no-repeat;
+mask:var(--back) center/11px 19px no-repeat}
+.navfx{position:fixed;top:0;left:0;right:0;z-index:6;height:104px;pointer-events:none;opacity:0;transition:opacity .2s}
+.navfx::before,.navfx::after{content:"";position:absolute;inset:0}
+.navfx::before{-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+-webkit-mask-image:linear-gradient(#000 67%,transparent 88%);mask-image:linear-gradient(#000 67%,transparent 88%)}
+.navfx::after{background:linear-gradient(rgba(var(--fog),.85) 56%,rgba(var(--fog),0))}
+.navfx.on{opacity:1}
+main.wrap{padding-top:16px;padding-bottom:64px}
 h1{margin:0;font-weight:700;font-size:clamp(34px,8.6vw,48px);line-height:1.08;letter-spacing:-.028em}
 h2{font-weight:700;font-size:22px;line-height:1.2;letter-spacing:-.018em}
 .hero h1{font-size:clamp(40px,10.6vw,64px);line-height:1.05}
@@ -35,7 +43,7 @@ h2{font-weight:700;font-size:22px;line-height:1.2;letter-spacing:-.018em}
 .sec{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:52px 0 20px;padding-bottom:8px;
 border-bottom:1px solid var(--line)}
 .sec h2{margin:0;font-size:28px;line-height:1.14;letter-spacing:-.022em}
-.sec a,.back{display:inline-flex;align-items:center;min-height:44px}
+.sec a{display:inline-flex;align-items:center;min-height:44px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:20px 0}
 .card h2{margin:0 0 10px}
 .card p{margin:0 0 14px}.card>:last-child{margin-bottom:0}
@@ -69,9 +77,6 @@ letter-spacing:-.018em}
 .app-hero .promo{margin:12px 0 0;color:var(--muted)}
 .app-hero+.card,.app-hero+.feat{margin-top:36px}
 .feat h2{margin:0 0 12px}.feat .card{margin:0}
-.back{gap:8px;margin:-12px 0 12px}
-.back::before{content:"";width:9px;height:9px;margin-left:3px;border:solid currentColor;border-width:0 0 2px 2px;
-transform:rotate(45deg)}
 .legal{max-width:680px}
 .legal h1{font-size:clamp(32px,8.2vw,44px)}
 .legal h1+p{margin:12px 0 0;color:var(--muted);font-size:15px}
@@ -92,54 +97,51 @@ letter-spacing:-.208px}
 .foot p,.foot .fl{display:block;margin:0;padding:8px 20px;text-align:center;border-bottom:1px solid var(--fline)}
 .foot .fl{color:var(--flink)}.foot .fl:last-child{border-bottom:0}
 
-body:has(.ios){background:#f2f2f7}
+body:has(.ios){background:#f2f2f7;--fog:242,242,247}
 main:has(.ios){max-width:none;padding:0}
 .ios{max-width:600px;margin:0 auto;color:#000;letter-spacing:normal;
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
 .ios a{color:#000;text-decoration:none}.ios a:hover{text-decoration:none}
-.ios h1{margin:0 0 9px;padding:12px 16px 0;font:700 34px/41px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
-letter-spacing:.37px}
+.ios h1{margin:0 0 7.67px;padding:13.33px 16px 0;font:700 34px/41px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+letter-spacing:0}
 .ios .grp{margin:0 16px;background:#fff;border-radius:26px;overflow:hidden}
 .ios .grp+.grp{margin-top:35px}
-.ios .me{position:relative;display:flex;align-items:center;height:88.67px;padding:0 16px}
-.ios .av{flex:none;width:60px;height:60px;border-radius:50%;background:linear-gradient(180deg,#b5b5b5,#3c3c3d);
-color:#fff;font:700 27px/60px -apple-system,BlinkMacSystemFont,"SF Pro Rounded","SF Pro Display",sans-serif;
-text-align:center;letter-spacing:-.3px}
-.ios .tx{display:flex;flex-direction:column;margin-left:18px;padding-top:3px;min-width:0}
-.ios .tx strong{font:600 21px/25px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;letter-spacing:.35px}
-.ios .tx span{margin-top:3.4px;color:#8a8a8e;font:400 13px/18px -apple-system,BlinkMacSystemFont,sans-serif;
-letter-spacing:-.08px}
+.ios .me{position:relative;display:flex;align-items:center;height:90px;padding:0 16px}
+.ios .av{flex:none;width:60px;height:60px;border-radius:50%;background:linear-gradient(#b7b7b7,#323232);color:#fff;
+font:900 28px/60px ui-rounded,-apple-system,BlinkMacSystemFont,"SF Pro Rounded",sans-serif;text-align:center;letter-spacing:0}
+.ios .tx{display:flex;flex-direction:column;margin-left:8px;padding-top:.38px;min-width:0}
+.ios .tx strong{font:600 20px/24px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;letter-spacing:0}
+.ios .tx span{margin-top:1.66px;color:#7f7f7f;font:400 13px/18px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0}
 .ios .rw{position:relative;display:flex;align-items:center;height:52px;padding-left:13.67px}
 .ios .rw img:not(.chev){flex:none;width:28.67px;height:28.67px;border-radius:7px;margin-right:13.66px;
 box-shadow:0 0 0 .5px rgba(0,0,0,.08)}
-.ios .rw span{font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.43px;
+.ios .rw span{position:relative;top:.33px;font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0;
 white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:48px}
-.ios .rw:not(:last-child)::after{content:"";position:absolute;left:56px;right:16.33px;bottom:0;height:1px;
-background:#e7e7e8}
+.ios .rw:not(:last-child)::after{content:"";position:absolute;left:56px;right:16px;bottom:0;height:1px;background:#e7e7e8}
 .ios .rw[hidden]{display:none}
-.ios .chev{position:absolute;right:18.67px;top:50%;width:7px;height:12px;margin-top:-6px}
+.ios .chev{position:absolute;right:18.33px;top:50%;width:7px;height:12px;margin-top:-6px}
 .ios .me:active,.ios .rw:active{background:#e5e5ea}
-.ios .sb{position:-webkit-sticky;position:sticky;bottom:28px;z-index:5;display:flex;align-items:center;
-gap:10.67px;height:48.33px;margin:35px 28px 28px;padding:0 23.33px 0 20px;border-radius:24.17px;
-background:rgba(255,255,255,.84);-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);
+.ios .sbw{position:-webkit-sticky;position:sticky;bottom:28px;z-index:5;margin:35px 28px 28px}
+.ios .sbw::before{content:"";position:absolute;left:50%;width:100vw;margin-left:-50vw;top:-24px;bottom:-28px;
+pointer-events:none;background:linear-gradient(rgba(242,242,247,0),rgba(242,242,247,.25) 21%,rgba(242,242,247,.6) 48%,
+rgba(242,242,247,.77) 74%)}
+.ios .sb{position:relative;display:flex;align-items:center;gap:10.67px;height:48.33px;padding:0 23.33px 0 20px;
+border-radius:24.17px;background:rgba(253,253,255,.9);-webkit-backdrop-filter:blur(24px) saturate(180%);
+backdrop-filter:blur(24px) saturate(180%);
 box-shadow:0 8px 28px rgba(0,0,0,.09),0 0 0 .5px rgba(0,0,0,.05),inset 0 1px 0 rgba(255,255,255,.8)}
 .ios .sb img{flex:none;display:block}
-.ios .av{font-family:ui-rounded,-apple-system,BlinkMacSystemFont,"SF Pro Rounded",sans-serif}
-.navfx{position:fixed;top:0;left:0;right:0;z-index:6;height:104px;pointer-events:none;opacity:0;transition:opacity .2s}
-.navfx::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(242,242,247,.88),rgba(242,242,247,.55) 60%,
-rgba(242,242,247,0));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
--webkit-mask-image:linear-gradient(#000 50%,transparent);mask-image:linear-gradient(#000 50%,transparent)}
-.navfx.on{opacity:1}
+.ios .sb img:last-child{position:relative;top:-.67px}
 .ios .sb input{flex:1;min-width:0;height:44px;margin:0;padding:0;border:0;background:transparent;color:#000;
-font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.43px;outline:0;
+font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0;outline:0;
 -webkit-appearance:none;appearance:none}
 .ios .sb input::placeholder{color:#707073;opacity:1}
 .ios .sb input::-webkit-search-cancel-button{-webkit-appearance:none}
+:root{--back:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAA5CAYAAAC4YUKZAAACWUlEQVR42sXZS4hPcRQH8I8Z4/0OERYUyiywkIWIKCVKiFCKDVZkpWwkhWwkC0nZIIqFsCE1XnmMjIQyCiVRQh7jbcbmTk0TM+df94xTv92t36df/e4933OrdW1NwjJMxlt86MrNu2EPmtFSrB/Y3JWAQ202b79mVScDqnEE6zp4piUT0B0nOjiB1nWmexKgB05iceDZhgxAL5wPnEALXmJo2YA+uBgEvEJt2YD+uBwEvMD4sgEDcSMIeIqxZQOG4E4Q8BijywYMx/0g4AFGlA0YiUdBwN2MWzAGT4KAmxhUNmAcngUBV4pbU2pNKK5XBHCxeG+UWrXFCyYCOIeeZQOm4E0QcAo1ZQOm4V0QcLT4fJdaM4oWLAI4jKqyAXPwOQg4UHRQpdZ8fAkC9mb0A4vwLQjYkQFYVnTBEcDWDMBq/AoCNmUA1uJ3YPNmrM8AzAmewC+syWrNrwUAP7E8Mx98DSBWZMe01wHEJfTNROwP3oirGJCFGFBBn3gLg7Mgw3AvCGnI6Bfbtu71QcjDjM65bYi5HoQ0ZmSI1uqHuiDkWUaaaq3euFBBrpyQBemJs/8zYbdWDU4HIW8wNXPsczwIeY/pWZCqYgAWgXzEzMxR4MEgpAlzM781+4KQr1iQCdkdhHzHkkzI9iDkJ1ZmQrYGIb+LPjatNgchzdiYCdnQboLf0dqSCYnGhhZsy4SsqiBA7cyELK0gSu7KhCysIFTPy/rp0ojbRcDubHTUnJ1pZuNTJydxpioZUVcMXD528Ey9Lqp/Dd+eZ+aYv9XEYr7ZVDQ/xzAK/gAQcR7593xSwAAAAABJRU5ErkJggg==)}
 </style></head>
 <body>
-<header class="bar"><div class="wrap"><a class="brand" href="../../">Lichters Apps</a><nav aria-label="Support"><a href="mailto:support@lichtersapps.com">Support</a></nav></div></header>
+<div class="navfx" id="fx" aria-hidden="true"></div>
+<header class="nb"><a href="../"><i aria-hidden="true"></i>Bracket Maker</a></header>
 <main class="wrap">
-<a class="back" href="../">Bracket Maker</a>
 <article class="legal"><h1>Imprint</h1>
 <div class="card group"><section><h2>Provider (§ 5 DDG, Germany)</h2>
 <p>David Lichters<br>Maurenbrecherstraße 16<br>47803 Krefeld</p></section><section><h2>Contact</h2>
@@ -149,4 +151,6 @@ font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.
 <p>We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p></section></div></article>
 </main>
 <footer class="foot"><nav aria-label="Legal"><p>Copyright © 2026 Lichters Apps. All rights reserved.</p><a class="fl" href="../../terms/">Terms of Service</a><a class="fl" href="../privacy/">Privacy Policy</a><a class="fl" href="../../imprint/">Imprint</a></nav></footer>
+<script>(function(){var fx=document.getElementById("fx");function u(){fx.classList.toggle("on",(window.scrollY||0)>2)}
+addEventListener("scroll",u,{passive:true});u()})()</script>
 </body></html>
