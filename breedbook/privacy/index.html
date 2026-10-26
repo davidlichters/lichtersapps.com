@@ -105,7 +105,7 @@ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helv
 .ios h1{margin:0 0 7.67px;padding:13.33px 16px 0;font:700 34px/41px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
 letter-spacing:0}
 .ios .grp{margin:0 16px;background:#fff;border-radius:26px;overflow:hidden}
-.ios .grp+.grp{margin-top:35px}
+.ios .grp+.grp,.ios #apps{margin-top:35px}
 .ios .me{position:relative;display:flex;align-items:center;height:90px;padding:0 16px}
 .ios .av{flex:none;width:60px;height:60px;border-radius:50%;background:linear-gradient(#b7b7b7,#323232);color:#fff;
 font:900 28px/60px ui-rounded,-apple-system,BlinkMacSystemFont,"SF Pro Rounded",sans-serif;text-align:center;letter-spacing:0}
@@ -120,14 +120,39 @@ white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:48px}
 .ios .rw:not(:last-child)::after{content:"";position:absolute;left:56px;right:16px;bottom:0;height:1px;background:#e7e7e8}
 .ios .rw[hidden]{display:none}
 .ios .chev{position:absolute;right:18.33px;top:50%;width:7px;height:12px;margin-top:-6px}
-.ios .me:active,.ios .rw:active{background:#e5e5ea}
+.ios a,.ios button{-webkit-tap-highlight-color:transparent}
 .ios .sbw{position:-webkit-sticky;position:sticky;bottom:28px;z-index:5;margin:35px 28px 28px}
 .ios .sbw::before{content:"";position:absolute;left:50%;width:100vw;margin-left:-50vw;top:-24px;bottom:-28px;
 pointer-events:none;background:linear-gradient(rgba(242,242,247,0),rgba(242,242,247,.25) 21%,rgba(242,242,247,.6) 48%,
 rgba(242,242,247,.77) 74%)}
 .ios .sb{position:relative;display:flex;align-items:center;gap:10.67px;height:48px;padding:0 22.66px 0 19.33px;
-border:.67px solid #fff;border-radius:24px;background:rgba(252,252,255,.94);-webkit-backdrop-filter:blur(24px) saturate(180%);
-backdrop-filter:blur(24px) saturate(180%);box-shadow:0 12px 48px rgba(0,0,0,.11)}
+border-radius:24px}
+.ios .glass{background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(7px) saturate(220%) brightness(1.06);
+backdrop-filter:blur(7px) saturate(220%) brightness(1.06);
+box-shadow:inset 0 0 0 .67px rgba(255,255,255,.95),inset 1.5px 1.5px 1px -1px rgba(255,255,255,1),
+inset -1.5px -1.5px 1px -1px rgba(255,255,255,.8),inset 0 0 14px rgba(255,255,255,.6),0 0 0 .33px rgba(0,0,0,.06),
+0 12px 40px rgba(0,0,0,.12)}
+.sugg{display:none}.ios .xb{display:none}
+/* Suchansicht wie in den iOS-Einstellungen (Davids Bild 26.10.2026, 3 px je pt gemessen): weißer Grund, oben
+   „Suggestions“ 17 pt halbfett #8a8a8d bei x 17, Zeilen 61 pt ohne Karte, Symbol bei x 16, Text bei x 57, Linie von
+   57 bis 376,67 auch unter der letzten Zeile, keine Pfeile; Suchleiste von x 12 bis 321, daneben runder X-Knopf 48 pt
+   (SF Symbol xmark, mittel, Maßstab groß, 17 pt), beide 14 pt über der Tastatur */
+html.srch body{background:#fff}
+html.srch .navfx,html.srch .foot,html.srch .ios h1,html.srch .ios #me{display:none}
+html.srch .ios .sugg{display:block;margin:0;padding:35px 17px 9px;color:#8a8a8d;
+font:600 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0}
+html.srch .ios .sugg.q{display:none}
+html.srch .ios #apps{margin:0;border-radius:0;background:transparent}
+html.srch .ios .rw{height:61px;padding-left:16px}
+html.srch .ios .rw img:not(.chev){margin-right:12.33px;box-shadow:none}
+html.srch .ios .rw::after{content:"";position:absolute;left:57px;right:16.33px;bottom:0;height:1px;background:#e7e7e8}
+html.srch .ios .chev{display:none}
+html.srch main:has(.ios){padding-bottom:130px}
+html.srch .ios .sbw{position:fixed;left:12px;right:72px;bottom:calc(14px + var(--kb,0px));margin:0}
+html.srch .ios .sbw::before{right:-72px;background:linear-gradient(rgba(255,255,255,0),rgba(250,250,250,.92) 55%)}
+html.srch .ios .xb{position:fixed;right:12px;bottom:calc(14px + var(--kb,0px));z-index:6;display:flex;align-items:center;
+justify-content:center;width:48px;height:48px;margin:0;padding:0;border:0;border-radius:50%;cursor:pointer}
+.ios .xb img{display:block}
 .ios .sb img{flex:none;display:block}
 .ios .sb img:last-child{position:relative;top:-.67px}
 .ios .sb input{flex:1;min-width:0;height:44px;margin:0;padding:0;border:0;background:transparent;color:#000;
