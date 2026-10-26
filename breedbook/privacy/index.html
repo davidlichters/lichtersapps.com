@@ -19,12 +19,15 @@ a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
 a:focus-visible{outline:2px solid var(--link);outline-offset:2px;border-radius:6px}
 p,li{overflow-wrap:break-word}
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
-.nb{position:-webkit-sticky;position:sticky;top:0;z-index:7;height:44px}
-.nb a{position:absolute;left:0;top:0;display:flex;align-items:center;height:44px;padding:0 16px 0 8px;color:#0088ff;
-font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0}
-.nb a:hover{text-decoration:none}.nb a:active{opacity:.3}
-.nb i{flex:none;width:11px;height:19px;margin-right:6px;background:currentColor;-webkit-mask:var(--back) center/11px 19px no-repeat;
+.nb{position:-webkit-sticky;position:sticky;top:0;z-index:7;display:flex;align-items:center;justify-content:center;
+height:54px}
+.nb a{position:absolute;left:16px;top:5px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;
+border-radius:50%;color:#000;-webkit-tap-highlight-color:transparent}
+.nb a:hover{text-decoration:none}.nb a:active{opacity:.6}
+.nb i{flex:none;width:11px;height:19px;margin-left:-3px;background:currentColor;-webkit-mask:var(--back) center/11px 19px no-repeat;
 mask:var(--back) center/11px 19px no-repeat}
+.nb b{max-width:calc(100% - 136px);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#000;
+font:600 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0}
 .navfx{position:fixed;top:0;left:0;right:0;z-index:6;height:104px;pointer-events:none;opacity:0;transition:opacity .2s}
 .navfx::before,.navfx::after{content:"";position:absolute;inset:0}
 .navfx::before{-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
@@ -127,11 +130,26 @@ pointer-events:none;background:linear-gradient(rgba(242,242,247,0),rgba(242,242,
 rgba(242,242,247,.77) 74%)}
 .ios .sb{position:relative;display:flex;align-items:center;gap:10.67px;height:48px;padding:0 22.66px 0 19.33px;
 border-radius:24px}
-.ios .glass{background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(7px) saturate(220%) brightness(1.06);
+.glass{background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(7px) saturate(220%) brightness(1.06);
 backdrop-filter:blur(7px) saturate(220%) brightness(1.06);
 box-shadow:inset 0 0 0 .67px rgba(255,255,255,.95),inset 1.5px 1.5px 1px -1px rgba(255,255,255,1),
 inset -1.5px -1.5px 1px -1px rgba(255,255,255,.8),inset 0 0 14px rgba(255,255,255,.6),0 0 0 .33px rgba(0,0,0,.06),
 0 12px 40px rgba(0,0,0,.12)}
+/* App-Seite wie die Einstellungen-Seite „Accessibility“ (Davids Bild, 26.10.2026, 3 px je pt gemessen): Karte 22,67 pt
+   unter der Leiste, Symbol 60 pt, Name 22 pt fett, Beschreibung 17/22 pt in #7f7f7f; Abschnittstitel 17 pt halbfett
+   #85858a bei x 32, 27,5 pt unter der Karte und 6 pt über der nächsten */
+.ios .hd{margin-top:22.67px;padding:16.33px 16px 14.8px}
+.ios .ai{display:block;width:60px;height:60px;border-radius:13.5px;box-shadow:0 0 0 .5px rgba(0,0,0,.08)}
+.ios .an{margin:13.3px 0 0;padding:0;color:#000;font:700 22px/28px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+letter-spacing:0}
+.ios .ad{margin:2.9px 0 0;color:#7f7f7f;font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0}
+.ios .sh{margin:0;padding:27.5px 32px 6.17px;color:#85858a;font:600 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;
+letter-spacing:0}
+.ios .sf{margin:0;padding:7px 32px 0;color:#7f7f7f;font:400 13px/18px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0}
+.ios .sf a{color:#0088ff}
+.ios .ft{height:auto;min-height:52px;padding-top:14px;padding-bottom:14px}
+.ios .ft span{white-space:normal;padding-right:16px}
+.ios .app{padding-bottom:40px}
 .sugg{display:none}.ios .xb{display:none}
 /* Suchansicht wie in den iOS-Einstellungen (Davids Bild 26.10.2026, 3 px je pt gemessen): weißer Grund, oben
    „Suggestions“ 17 pt halbfett #8a8a8d bei x 17, Zeilen 61 pt ohne Karte, Symbol bei x 16, Text bei x 57, Linie von
@@ -164,7 +182,7 @@ font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:0;
 </style></head>
 <body>
 <div class="navfx" id="fx" aria-hidden="true"></div>
-<header class="nb"><a href="../"><i aria-hidden="true"></i>Breedbook</a></header>
+<header class="nb"><a class="glass" href="../" aria-label="Back to Breedbook"><i aria-hidden="true"></i></a><b>Privacy Policy for Breedbook</b></header>
 <main class="wrap">
 <article class="legal"><h1>Privacy Policy for Breedbook</h1>
 <p>Last updated: October 2026</p>
