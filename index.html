@@ -129,9 +129,7 @@ box-shadow:0 8px 28px rgba(0,0,0,.09),0 0 0 .5px rgba(0,0,0,.05),inset 0 1px 0 r
 .navfx::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(242,242,247,.88),rgba(242,242,247,.55) 60%,
 rgba(242,242,247,0));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
 -webkit-mask-image:linear-gradient(#000 50%,transparent);mask-image:linear-gradient(#000 50%,transparent)}
-.navfx span{position:relative;display:block;padding-top:11px;text-align:center;opacity:0;transition:opacity .15s;
-font:600 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.43px;color:#000}
-.navfx.on{opacity:1}.navfx.t span{opacity:1}
+.navfx.on{opacity:1}
 .ios .sb input{flex:1;min-width:0;height:44px;margin:0;padding:0;border:0;background:transparent;color:#000;
 font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.43px;outline:0;
 -webkit-appearance:none;appearance:none}
@@ -141,7 +139,7 @@ font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.
 <body>
 
 <main class="wrap">
-<div class="navfx" id="fx" aria-hidden="true"><span>Lichters Apps</span></div>
+<div class="navfx" id="fx" aria-hidden="true"></div>
 <div class="ios">
 <h1 id="lt">Lichters Apps</h1>
 <div class="grp"><a class="me" href="mailto:support@lichtersapps.com"><span class="av" aria-hidden="true">DL</span>
@@ -168,8 +166,7 @@ font:400 17px/22px -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.
 <input type="search" placeholder="Search" aria-label="Search apps" autocomplete="off" id="q"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAA2CAYAAACr6+s1AAADb0lEQVR4nO2ZW4iNURTHf3NOw7jUmMHMSMpEeJHbyNS4FE8jRBo1riEUD548UEMelAe5zQOaB4qJFJHy4FIazYyJB9fILWVSGoQZZjBnjva0j45t7fPt75zvHCbnX/tl77XW/n/7stZe68shdUwBxgHFwBfgDdAEfOIvYBCwE2gFokL7DlwGpmeS1FTgtYWQ2XqA/UAo3aTKgQ5HUvGtPp2khvpYKaltTRexfZYJ3wG1wBZgO9BgkfsMFARNKt+yhY1AoSC/FogI8juCJrZEmKQdKEmgUyvoNAdN7KAwSZ2HzlhBpxsY6DKh6zUeKfQ1eeg8B9qMvrDHKvsmNlzoa3PQk2SGBUksV+iLOOhFHG39gbR75GSRJeYXWWJ+kSWWDLE8YDdwDdjjGjICxlzgInAOKIt1Hjfi2WlBsVGIe5UOE94X9CoMmTIdQ2Pj6hVTqlas2hCs0jEtU1hmzKfyiYWKWH9DMOwaNgJCntT3Tx/+Pk0sIvTlJGnf5VXSqxh1MPhekClwsD9E6PvgMZdCVHV2CgPqZsTjrSXxTYQiy8vXtCX5za8hnVaZKBH8mInlHs54vdD3SKhpjBDkejk1C06wSlCOd4KxdtKyFeW6wGLKq9zUxEtBbpYaOCEMHBAMnLIksnf06lToaHAY+CbI/QBGCx8s2VTHgA3CgPoKKR3rSKFEcEiwuUmQexYbLLUYmicYqtYVHL+kWoB+gr3bguyReIFbgsANwVCMXJcPUld1icFEpUV+TrzQGovQKmSMB857rF6rPiZhizt6Kug8jDnumPfO1YLm4WzXh/qBhWAxMD+u1NmhS50NehcUcRM5ul5mvmoUVkq1tMWWL1cTTSQYhICjlnkaE4W5eouScoorUiSlXMMVi321MxMSKQ8G7iY4N9eB2UlUImu0N5dsRgSHLkKdlcceN+0JsFe9NLV/G6B1w7oAMwPYDFzQsdhmR53BjX6+slC7Cz++qsenvApZS32u/q+vr7GEl2iKrUW7nJQwRmdOUhD321Qxb7XjI9MZo4BdwD2fZD7q274gE0/5In3wtwEvBDLHgHXApAyngr/hkkBsMv97lpRxhOhjyAfOaK8d8WhRS5hJ1Lr1pVEXyBfq0uBUo0LrFJ5aCbdyJpkrqEzzQ+wmmUGXzrKcoc7YWf1vO13b+ApYZGPwEzuxEizJZkxjAAAAAElFTkSuQmCC" width="12.67" height="18" alt=""></form>
 <script>document.getElementById("q").addEventListener("input",function(e){var q=e.target.value.trim().toLowerCase();
 document.querySelectorAll("#apps .rw").forEach(function(r){r.hidden=q&&r.dataset.n.indexOf(q)<0})});
-(function(){var fx=document.getElementById("fx"),lt=document.getElementById("lt");function u(){var y=window.scrollY||0;
-fx.classList.toggle("on",y>2);fx.classList.toggle("t",lt.getBoundingClientRect().bottom<44)}
+(function(){var fx=document.getElementById("fx");function u(){fx.classList.toggle("on",(window.scrollY||0)>2)}
 addEventListener("scroll",u,{passive:true});u()})()</script>
 </div>
 </main>
