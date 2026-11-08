@@ -1,9 +1,1 @@
-<!-- part of ecom/deep/04-store-build-and-shopify.md -->
-Part 40 of 49 of "4. Store Build and Shopify: full technical reference". Map of all parts: https://lichtersapps.com/ai/ecom/deep/04-store-build-and-shopify.md · Previous: https://lichtersapps.com/ai/ecom/deep/04-store-build-and-shopify/39-4-store-build-and-shopify-full-technical-reference.md · Next: https://lichtersapps.com/ai/ecom/deep/04-store-build-and-shopify/41-4-store-build-and-shopify-full-technical-reference.md
-
-## Social profiles, tracking and Google readiness
-
-
-
-
-Part 40 of 49 of "4. Store Build and Shopify: full technical reference". Map of all parts: https://lichtersapps.com/ai/ecom/deep/04-store-build-and-shopify.md · Previous: https://lichtersapps.com/ai/ecom/deep/04-store-build-and-shopify/39-4-store-build-and-shopify-full-technical-reference.md · Next: https://lichtersapps.com/ai/ecom/deep/04-store-build-and-shopify/41-4-store-build-and-shopify-full-technical-reference.md
+This file moved to https://dlichters.com/ai/ecom/deep/04-store-build-and-shopify/40-social-profiles-tracking-and-google-readiness.md
